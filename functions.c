@@ -16,7 +16,7 @@ void addBlock(struct Block* root) {
 }
 
 void initializeHeader(struct Header* block_header){
-    block_header -> version = 0;
+    block_header -> version = __STDC_VERSION__;
     block_header -> previous_block_hash = (void *)malloc(sizeof(void));
     block_header -> merkle_root = (void *)malloc(sizeof(void));
     block_header -> timestamp = (unsigned long)time(NULL);
