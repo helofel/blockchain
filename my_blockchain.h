@@ -1,11 +1,14 @@
 #ifndef MY_BLOCKCHAIN_H
 #define MY_BLOCKCHAIN_H
 
+#define BLOCK_SIZE 4
+#define BLOCK_HEADER_SIZE 32
+
+
 struct Block {
     int32_t block_size;
     struct Header* block_header;
-    struct Block* previousBlock;
-    struct Block* nextBlock;
+    struct Block* next;
 };
 
 struct Header {
