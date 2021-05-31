@@ -8,18 +8,24 @@
 int main(int argc, char **argv)
 {
 
-    if (argc == 2)
+    if (argc > 1)
     {
-        struct Block *root = (struct Block *)malloc(sizeof(struct Block));
-        // root->block_size = (int32_t)malloc(BLOCK_SIZE);
+        struct Block * root = (struct Block *)malloc(sizeof(struct Block));
+        root -> hash_ID = hash((unsigned char *)KEY);
         root->block_header = (struct Header *)malloc(BLOCK_HEADER_SIZE * sizeof(struct Header));
-        // root->next = (struct Block *)malloc(sizeof(struct Block));
-        root -> next = NULL;
+        initializeHeader(root->block_header);
+        root->next = NULL;
+        // printf("%zu\n", root -> hash_ID);
 
-        for (int index = 0; index < argv[1][0]; ++index)
-        {
-            addBlock(root); 
+        for(int index = 1; index < atoi(argv[1]); ++index){
+            // printf("%d\n", index + 1);
+            addBlock(root);
         }
+
+        toString(root);
+        printf("Length: %d\n", blockchainLength(root));
+        dismantle(root); 
     }
+
     return 0;
 }

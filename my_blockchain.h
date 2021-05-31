@@ -3,10 +3,12 @@
 
 #define BLOCK_SIZE 4
 #define BLOCK_HEADER_SIZE 32
+#define KEY "sP4qQ3hakpWBHtfHpd7d"
 
 
 struct Block {
     // int32_t block_size;
+    unsigned long hash_ID; 
     struct Header* block_header;
     struct Block* next;
 };
@@ -21,5 +23,13 @@ struct Header {
 };
 
 void addBlock(struct Block *); 
+void dismantle(struct Block *);
+int blockchainLength(struct Block *);
 void initializeHeader(struct Header *);
+void toString(struct Block *);
+unsigned long hash(unsigned char *);
+void reverse(char[], int);
+void swap(char , char );
+char* itoa(int, char*, int);
+
 #endif
