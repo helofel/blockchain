@@ -52,8 +52,13 @@ void initializeHeader(struct Header *block_header)
 unsigned long hash(unsigned char *str)
 {
     // unsigned long hash = 5381;
-    unsigned long hash = atoi(KEY);
+    unsigned long hash;
     int c;
+    time_t t; 
+
+    srand((unsigned)time(&t));
+
+    hash = rand() % 20;
 
     while (c == *str++)
         hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
