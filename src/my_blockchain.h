@@ -1,16 +1,17 @@
 #ifndef MY_BLOCKCHAIN_H
 #define MY_BLOCKCHAIN_H
 
-#define BLOCK_SIZE 4
+#include "sha256/sha256.h"
+
 #define BLOCK_HEADER_SIZE 32
-#define KEY "184348917474414977452"
+#define KEY "helofel"
 
 
 struct Block {
-    // int32_t block_size;
-    //unsigned long hash_ID; 
-    char* message; 
+    SHA256_CTX *ctx; 
     struct Header* block_header;
+    // BYTE hash[SHA256_BLOCK_SIZE]; 
+    BYTE *hash;
     struct Block* next;
 };
 
