@@ -1,3 +1,4 @@
+/*
 ***@file sha256.h
             *@brief SHA -
         256(Secure Hash Algorithm 256) *
@@ -28,6 +29,7 @@ either version 2 * of the License, or (at your option) any later version.
 if
     not, write to the Free Software Foundation,
         *Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110 - 1301, USA.**@author Oryx Embedded SARL(www.oryx - embedded.com) * @version 2.0.4 * * /
+*/
 
 #ifndef _SHA256_H
 #define _SHA256_H

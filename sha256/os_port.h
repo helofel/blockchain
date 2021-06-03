@@ -91,8 +91,8 @@
 #elif defined(USE_CMSIS_RTOS2)
    #include "os_port_cmsis_rtos2.h"
 //FreeRTOS port?
-#elif defined(USE_FREERTOS)
-   #include "os_port_freertos.h"
+// #elif defined(USE_FREERTOS)
+  //  #include "os_port_freertos.h"
 //SafeRTOS port?
 #elif defined(USE_SAFERTOS)
    #include "os_port_safertos.h"

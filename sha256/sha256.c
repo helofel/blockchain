@@ -37,11 +37,12 @@
     #define TRACE_LEVEL CRYPTO_TRACE_LEVEL
      
     //Dependencies
-    // #include "core/:wcrypto.h"
     #include "crypto.h"
     #include "sha256.h"
-    // #include "hash/sha256.h"
      
+   cryptoAllocMem();
+   osFreeMem();
+
     //Check crypto library configuration
     #if (SHA224_SUPPORT == ENABLED || SHA256_SUPPORT == ENABLED)
      

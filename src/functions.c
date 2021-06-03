@@ -5,7 +5,7 @@
 #include "string.h"
 #include <stdbool.h>
 #include "my_blockchain.h"
-#include "sha256.c" 
+#include "../sha256/sha256.c" 
 
 void addBlock(struct Block *root)
 {
