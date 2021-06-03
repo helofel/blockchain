@@ -11,11 +11,6 @@ int main(int argc, char **argv)
     if (argc > 1)
     {
         struct Block *root = (struct Block *)malloc(sizeof(struct Block));
-        // root->block_header = (struct Header *)malloc(BLOCK_HEADER_SIZE * sizeof(struct Header));
-        // initializeHeader(root->block_header);
-        root->ctx = NULL;
-        root->block_header = NULL;
-        root->next = NULL;
 
         for (int index = 1; index < atoi(argv[1]); ++index)
         {

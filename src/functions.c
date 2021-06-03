@@ -12,28 +12,22 @@ void addBlock(struct Block *root)
 
     if (root->block_header == NULL)
     {
-        // printf("Got here12233\n");
         root->block_header = (struct Header *)malloc(BLOCK_HEADER_SIZE * sizeof(struct Header));
         initializeHeader(root->block_header);
     }
     if (root->hash == NULL)
     {
-        // printf("got to here\n");
         root->ctx = malloc(sizeof(SHA256_CTX));
         root->hash = malloc(sizeof(BYTE));
         sha256_init(root->ctx);
         sha256_update(root->ctx, KEY, strlen(KEY));
         sha256_final(root->ctx, root->hash);
 
-        // printf("%d\n", pass && !memcmp(root->hash, buf, SHA256_BLOCK_SIZE));
         printf("%s\n", root->hash);
     }
     if (root->next == NULL)
     {
         root->next = (struct Block *)malloc(sizeof(struct Block));
-        root->next->block_header = (struct Header *)malloc(sizeof(struct Header));
-        initializeHeader(root->next->block_header);
-        root->next->next = NULL;
         return;
     }
     addBlock(root->next);
